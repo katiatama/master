@@ -1,0 +1,27 @@
+stages:
+  - test
+  - build
+
+variables:
+  IMAGE_NAME: $CI_REGISTRY_IMAGE
+  IMAGE_TAG: $CI_COMMIT_SHORT_SHA
+
+test:
+  stage: test
+  image: python:3.11
+  before_script:
+    - pip install -r requirements.txt
+  script:
+    - pytest
+  only:
+    - main
+
+build:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker build -t $IMAGE_NAME:$IMAGE_TAG .
+  only:
+    - main
