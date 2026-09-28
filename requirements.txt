@@ -3,3 +3,7 @@ uvicorn
 pytest
 httpx
 psycopg2-binary
+<<<<<<< HEAD
+=======
+pytest-asyncio
+>>>>>>> ef687b8 (feat: create FastAPI application with tests)
