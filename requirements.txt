@@ -1,9 +1,6 @@
-fastapi
-uvicorn
-pytest
-httpx
+fastapi==0.115.6
+uvicorn==0.34.0
+pytest==8.3.4
+httpx==0.28.1
 psycopg2-binary
-<<<<<<< HEAD
-=======
 pytest-asyncio
->>>>>>> ef687b8 (feat: create FastAPI application with tests)
